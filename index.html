@@ -381,17 +381,16 @@ footer a:hover { color: #fff; }
 
 <script>
 const PROJECT_MEDIA = {
-    heroVideo: "media/project-video.mp4",
-    heroPoster: "media/hero-cover.jpg",
+    heroVideo: "", /* أضف مسار الفيديو الرئيسي هنا إن وجد، أو اتركه فارغاً ليتم اعتماد الصورة 1.JPEG مباشرة */
+    heroPoster: "media/1.JPEG",
     projectVideo: "media/project-video.mp4",
-    videoPoster: "media/video-cover.jpg",
+    videoPoster: "media/1.JPEG",
     images: [
-        {src:"media/distribution-01.jpg", title:"من الميدان — المرحلة الأولى"},
-        {src:"media/distribution-02.jpg", title:"تجهيز المساعدات الغذائية"},
-        {src:"media/distribution-03.jpg", title:"توزيع الطرود الغذائية"},
-        {src:"media/distribution-04.jpg", title:"الوصول إلى الأسر المستفيدة"},
-        {src:"media/distribution-05.jpg", title:"السلال الغذائية الطازجة"},
-        {src:"media/distribution-06.jpg", title:"من مراحل تنفيذ المشروع"}
+        {src: "media/7.JPEG", title: "من الميدان — المرحلة الأولى"},
+        {src: "media/5.JPEG", title: "تجهيز المساعدات الغذائية"},
+        {src: "media/2.JPEG", title: "توزيع الطرود الغذائية"},
+        {src: "media/3.JPEG", title: "الوصول إلى الأسر المستفيدة"},
+        {src: "media/6.JPEG", title: "السلال الغذائية الطازجة"}
     ]
 };
 </script>
@@ -468,7 +467,7 @@ const PROJECT_MEDIA = {
             </div>
         </div>
     </div>
-    <div class="container video-note">المحتوى البصري من المشروع يُضاف من مجلد media</div>
+    <div class="container video-note">المحتوى البصري من مجلد media</div>
 </section>
 
 <!-- TRUST -->
@@ -568,7 +567,7 @@ const PROJECT_MEDIA = {
         <div class="section-head reveal">
             <div class="eyebrow">من أرض الميدان</div>
             <h2>المشروع كما يحدث على الأرض.</h2>
-            <p>أضف صورك وفيديو المشروع داخل مجلد <b>media</b>، وستظهر هنا ضمن تجربة بصرية موحدة.</p>
+            <p>توثيق مصور لأبرز محطات الاستجابة والتوزيع الميداني.</p>
         </div>
 
         <div class="gallery reveal" id="gallery"></div>
@@ -879,6 +878,20 @@ const PROJECT_MEDIA = {
 </div>
 
 <script>
+const PROJECT_MEDIA = {
+    heroVideo: "",
+    heroPoster: "media/1.JPEG",
+    projectVideo: "media/project-video.mp4",
+    videoPoster: "media/1.JPEG",
+    images: [
+        { src: "media/7.JPEG", title: "من الميدان — المرحلة الأولى" },
+        { src: "media/5.JPEG", title: "تجهيز المساعدات الغذائية" },
+        { src: "media/2.JPEG", title: "توزيع الطرود الغذائية" },
+        { src: "media/3.JPEG", title: "الوصول إلى الأسر المستفيدة" },
+        { src: "media/6.JPEG", title: "السلال الغذائية الطازجة" }
+    ]
+};
+
 function setMedia() {
     const heroVideo = document.getElementById("heroVideo");
     const heroSource = document.getElementById("heroVideoSource");
