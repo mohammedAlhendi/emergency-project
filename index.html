@@ -29,7 +29,6 @@
     --max-width: 1240px;
 }
 
-/* ================= CSS RESET & BASE ================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -46,7 +45,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .container { width: min(var(--max-width), calc(100% - 48px)); margin: auto; }
 .section { padding: 110px 0; }
 
-/* ================= TYPOGRAPHY & HELPERS ================= */
 .eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: 13px; font-weight: 800; letter-spacing: .06em;
@@ -62,7 +60,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .section-head p { color: var(--muted); margin-top: 16px; font-size: 17px; }
 
-/* ================= NAVIGATION ================= */
 .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     padding: 16px 0; transition: all 0.3s ease;
@@ -95,7 +92,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .nav-cta:hover { transform: translateY(-1px); }
 .menu-btn { display: none; color: #fff; font-size: 26px; }
 
-/* ================= HERO SECTION ================= */
 .hero {
     min-height: 100vh; position: relative; display: flex; align-items: flex-end;
     overflow: hidden; background: var(--primary-dark); color: #fff;
@@ -145,7 +141,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .hero-stat span { font-size: 12px; color: rgba(255,255,255,0.65); }
 .video-note { position: absolute; bottom: 24px; left: 0; z-index: 3; color: rgba(255,255,255,0.5); font-size: 11px; }
 
-/* ================= TRUST PARTNERS ================= */
 .trust { background: var(--bg-card); border-bottom: 1px solid var(--border); }
 .trust-inner { min-height: 105px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .trust-label { font-size: 12px; color: var(--muted); font-weight: 700; }
@@ -154,7 +149,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .org small { display: block; font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
 .org-divider { width: 1px; height: 35px; background: var(--border); }
 
-/* ================= INTRO OVERVIEW ================= */
 .intro-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
 .intro-number {
     font-family: "Plus Jakarta Sans", sans-serif; font-size: clamp(90px, 13vw, 180px);
@@ -170,7 +164,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .focus-card b { display: block; font-size: 14px; margin-bottom: 4px; color: var(--primary-dark); }
 .focus-card span { font-size: 12px; color: var(--muted); }
 
-/* ================= METRICS BAR ================= */
 .metrics { background: var(--primary-dark); color: #fff; }
 .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .metric { padding: 32px 24px; border-left: 1px solid rgba(255,255,255,0.12); }
@@ -178,7 +171,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .metric strong { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 50px; letter-spacing: -1.5px; color: #a3e2c9; }
 .metric span { color: rgba(255,255,255,0.65); font-size: 12px; }
 
-/* ================= MEDIA & GALLERY ================= */
 .media-section { background: var(--bg-card); }
 .gallery { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr; grid-auto-rows: 220px; gap: 14px; }
 .gallery-item {
@@ -198,18 +190,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     background: #fff; color: var(--primary-dark); display: grid; place-items: center;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15); font-weight: bold;
 }
-.video-wrap {
-    margin-top: 40px; position: relative; overflow: hidden; border-radius: var(--radius-lg);
-    background: var(--primary-dark); box-shadow: var(--shadow);
-}
-.project-video { width: 100%; max-height: 600px; display: block; }
-.video-caption {
-    padding: 20px 24px; color: #fff; display: flex; justify-content: space-between;
-    align-items: center; gap: 20px; background: rgba(2,62,43,0.6); backdrop-filter: blur(10px);
-}
-.video-caption span { color: rgba(255,255,255,0.65); font-size: 12px; }
 
-/* ================= AID COMPONENTS ================= */
 .aid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .aid-card {
     background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px;
@@ -234,7 +215,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .item-list li:last-child { border-bottom: 0; }
 .item-list span:last-child { font-weight: 800; white-space: nowrap; color: var(--primary); }
 
-/* ================= PHASES TIMELINE ================= */
 .phases { background: #eef5f2; }
 .timeline { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .timeline::before {
@@ -253,7 +233,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .phase-date { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: var(--accent); font-size: 13px; }
 .phase p { font-size: 13px; color: var(--muted); margin-top: 12px; }
 
-/* ================= IMPLEMENTATION STEPS ================= */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .step {
     min-height: 240px; background: var(--primary-dark); color: #fff; border-radius: var(--radius-md); padding: 30px;
@@ -263,7 +242,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .step h3 { font-size: 19px; line-height: 1.35; }
 .step p { font-size: 12px; color: rgba(255,255,255,0.65); }
 
-/* ================= ACCOUNTABILITY ================= */
 .accountability { background: var(--bg-card); }
 .account-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; }
 .account-panel {
@@ -290,7 +268,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .account-point strong { font-size: 14px; color: var(--primary-dark); display: block; }
 .account-point span { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
 
-/* ================= TARGET GROUPS ================= */
 .target { background: var(--bg-main); }
 .target-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .target-card {
@@ -301,7 +278,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .target-card h3 { font-size: 18px; margin: 12px 0 8px; color: var(--primary-dark); }
 .target-card p { font-size: 12px; color: var(--muted); }
 
-/* ================= CTA BANNER ================= */
 .cta {
     position: relative; background: var(--primary); color: #fff; overflow: hidden; padding: 90px 0;
 }
@@ -314,7 +290,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .cta p { margin-top: 14px; color: rgba(255,255,255,0.8); max-width: 620px; font-size: 14px; }
 .cta .btn { background: #fff; color: var(--primary-dark); margin-top: 25px; }
 
-/* ================= FOOTER ================= */
 footer { background: #021a14; color: #fff; padding: 60px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
 .footer-title { font-weight: 800; margin-bottom: 16px; font-size: 14px; color: #a3e2c9; }
@@ -326,7 +301,6 @@ footer a:hover { color: #fff; }
     display: flex; justify-content: space-between; gap: 20px; font-size: 11px; color: rgba(255,255,255,0.4);
 }
 
-/* ================= LIGHTBOX ================= */
 .lightbox {
     position: fixed; inset: 0; background: rgba(2, 26, 20, 0.95); z-index: 3000;
     display: none; align-items: center; justify-content: center; padding: 30px;
@@ -339,61 +313,12 @@ footer a:hover { color: #fff; }
 }
 .lightbox-caption { position: absolute; bottom: 25px; color: #fff; font-size: 13px; font-weight: 600; }
 
-/* ================= ANIMATION REVEAL ================= */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
-
-/* ================= RESPONSIVE ================= */
-@media(max-width: 1000px) {
-    .nav-links { display: none; position: absolute; top: 70px; right: 24px; left: 24px;
-        padding: 24px; background: rgba(2,62,43,0.98); border-radius: var(--radius-md); flex-direction: column; align-items: stretch; border: 1px solid rgba(255,255,255,0.15); }
-    .nav-links.open { display: flex; }
-    .nav-links a { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .nav-links a:last-child { border-bottom: 0; }
-    .menu-btn { display: block; }
-    .intro-grid, .account-grid { grid-template-columns: 1fr; gap: 40px; }
-    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-    .metric { border-bottom: 1px solid rgba(255,255,255,0.12); }
-    .steps { grid-template-columns: repeat(2, 1fr); }
-}
-@media(max-width: 768px) {
-    .container { width: min(var(--max-width), calc(100% - 32px)); }
-    .section { padding: 80px 0; }
-    .hero-content { padding-top: 120px; padding-bottom: 50px; }
-    .hero h1 { letter-spacing: -1.5px; }
-    .hero-stats { grid-template-columns: 1fr; gap: 15px; }
-    .trust-inner { padding: 20px 0; flex-direction: column; align-items: flex-start; }
-    .orgs { width: 100%; justify-content: space-between; }
-    .focus-grid, .aid-grid, .target-grid, .timeline { grid-template-columns: 1fr; }
-    .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
-    .gallery-item:first-child { grid-row: span 1; }
-    .gallery-item:nth-child(4) { grid-column: auto; }
-    .steps { grid-template-columns: 1fr; }
-    .timeline::before { display: none; }
-    .cta-inner { display: block; }
-    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-    .footer-bottom { flex-direction: column; gap: 10px; }
-}
 </style>
 </head>
 
 <body>
-
-<script>
-const PROJECT_MEDIA = {
-    heroVideo: "", /* أضف مسار الفيديو الرئيسي هنا إن وجد، أو اتركه فارغاً ليتم اعتماد الصورة 1.JPEG مباشرة */
-    heroPoster: "media/1.JPEG",
-    projectVideo: "media/project-video.mp4",
-    videoPoster: "media/1.JPEG",
-    images: [
-        {src: "media/7.JPEG", title: "من الميدان — المرحلة الأولى"},
-        {src: "media/5.JPEG", title: "تجهيز المساعدات الغذائية"},
-        {src: "media/2.JPEG", title: "توزيع الطرود الغذائية"},
-        {src: "media/3.JPEG", title: "الوصول إلى الأسر المستفيدة"},
-        {src: "media/6.JPEG", title: "السلال الغذائية الطازجة"}
-    ]
-};
-</script>
 
 <!-- NAV -->
 <header class="nav" id="nav">
@@ -423,10 +348,7 @@ const PROJECT_MEDIA = {
 <!-- HERO -->
 <section class="hero" id="top">
     <div class="hero-media">
-        <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata">
-            <source id="heroVideoSource" src="" type="video/mp4">
-        </video>
-        <img class="hero-image" id="heroImage" alt="مشهد من مشروع توزيع المساعدات الغذائية">
+        <img class="hero-image" id="heroImage" src="media/1.jpeg" alt="مشهد من مشروع توزيع المساعدات الغذائية" style="display: block; width: 100%; height: 100%; object-fit: cover;">
     </div>
 
     <div class="container hero-content">
@@ -467,7 +389,6 @@ const PROJECT_MEDIA = {
             </div>
         </div>
     </div>
-    <div class="container video-note">المحتوى البصري من مجلد media</div>
 </section>
 
 <!-- TRUST -->
@@ -570,16 +491,32 @@ const PROJECT_MEDIA = {
             <p>توثيق مصور لأبرز محطات الاستجابة والتوزيع الميداني.</p>
         </div>
 
-        <div class="gallery reveal" id="gallery"></div>
-
-        <div class="video-wrap reveal">
-            <video class="project-video" id="projectVideo" controls playsinline preload="metadata">
-                <source id="projectVideoSource" src="" type="video/mp4">
-            </video>
-            <div class="video-caption">
-                <strong>فيديو المشروع</strong>
-                <span>توثيق بصري من مراحل التنفيذ والتوزيع</span>
-            </div>
+        <div class="gallery reveal" id="gallery">
+            <article class="gallery-item" onclick="openLightbox('media/7.jpeg', 'من الميدان — المرحلة الأولى')">
+                <img src="media/7.jpeg" alt="من الميدان — المرحلة الأولى" loading="lazy">
+                <div class="gallery-overlay">من الميدان — المرحلة الأولى</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/5.jpeg', 'تجهيز المساعدات الغذائية')">
+                <img src="media/5.jpeg" alt="تجهيز المساعدات الغذائية" loading="lazy">
+                <div class="gallery-overlay">تجهيز المساعدات الغذائية</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/2.jpeg', 'توزيع الطرود الغذائية')">
+                <img src="media/2.jpeg" alt="توزيع الطرود الغذائية" loading="lazy">
+                <div class="gallery-overlay">توزيع الطرود الغذائية</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/3.jpeg', 'الوصول إلى الأسر المستفيدة')">
+                <img src="media/3.jpeg" alt="الوصول إلى الأسر المستفيدة" loading="lazy">
+                <div class="gallery-overlay">الوصول إلى الأسر المستفيدة</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/6.jpeg', 'السلال الغذائية الطازجة')">
+                <img src="media/6.jpeg" alt="السلال الغذائية الطازجة" loading="lazy">
+                <div class="gallery-overlay">السلال الغذائية الطازجة</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
         </div>
     </div>
 </section>
@@ -878,67 +815,6 @@ const PROJECT_MEDIA = {
 </div>
 
 <script>
-const PROJECT_MEDIA = {
-    heroVideo: "",
-    heroPoster: "media/1.JPEG",
-    projectVideo: "media/project-video.mp4",
-    videoPoster: "media/1.JPEG",
-    images: [
-        { src: "media/7.JPEG", title: "من الميدان — المرحلة الأولى" },
-        { src: "media/5.JPEG", title: "تجهيز المساعدات الغذائية" },
-        { src: "media/2.JPEG", title: "توزيع الطرود الغذائية" },
-        { src: "media/3.JPEG", title: "الوصول إلى الأسر المستفيدة" },
-        { src: "media/6.JPEG", title: "السلال الغذائية الطازجة" }
-    ]
-};
-
-function setMedia() {
-    const heroVideo = document.getElementById("heroVideo");
-    const heroSource = document.getElementById("heroVideoSource");
-    const heroImage = document.getElementById("heroImage");
-
-    const projectVideo = document.getElementById("projectVideo");
-    const projectSource = document.getElementById("projectVideoSource");
-
-    if (PROJECT_MEDIA.heroVideo) {
-        heroSource.src = PROJECT_MEDIA.heroVideo;
-        heroVideo.poster = PROJECT_MEDIA.heroPoster || "";
-        heroVideo.load();
-
-        heroVideo.addEventListener("error", () => {
-            heroVideo.style.display = "none";
-            heroImage.style.display = "block";
-            heroImage.src = PROJECT_MEDIA.heroPoster || "";
-        });
-    } else {
-        heroVideo.style.display = "none";
-        heroImage.style.display = "block";
-        heroImage.src = PROJECT_MEDIA.heroPoster || "";
-    }
-
-    if (PROJECT_MEDIA.projectVideo) {
-        projectSource.src = PROJECT_MEDIA.projectVideo;
-        projectVideo.poster = PROJECT_MEDIA.videoPoster || "";
-        projectVideo.load();
-    }
-}
-
-function buildGallery() {
-    const gallery = document.getElementById("gallery");
-    PROJECT_MEDIA.images.forEach((item) => {
-        if (!item.src) return;
-        const article = document.createElement("article");
-        article.className = "gallery-item";
-        article.innerHTML = `
-            <img src="${item.src}" alt="${item.title || "صورة من المشروع"}" loading="lazy">
-            <div class="gallery-overlay">${item.title || "من المشروع"}</div>
-            <div class="play-badge" aria-hidden="true">↗</div>
-        `;
-        article.addEventListener("click", () => openLightbox(item.src, item.title || ""));
-        gallery.appendChild(article);
-    });
-}
-
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxCaption = document.getElementById("lightboxCaption");
@@ -988,9 +864,6 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold:.08});
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-setMedia();
-buildGallery();
 </script>
 
 </body>
