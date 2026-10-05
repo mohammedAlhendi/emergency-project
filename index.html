@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061e18">
+<meta name="description" content="مشروع الاستجابة الطارئة للأيتام - طرود غذائية وسلال غذائية طازجة في قطاع غزة">
+<title>مشروع الاستجابة الطارئة للأيتام | 1,074 أسرة</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #046345;
+    --primary-dark: #023e2b;
+    --primary-light: #e6f4ef;
+    --accent: #f2a93b;
+    --bg-main: #f8faf9;
+    --bg-card: #ffffff;
+    --ink: #0f1f1b;
+    --muted: #5e6e69;
+    --border: rgba(4, 99, 69, 0.12);
+    --shadow: 0 20px 50px rgba(4, 31, 27, 0.08);
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 12px;
+    --max-width: 1240px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: "Cairo", sans-serif;
+    color: var(--ink);
+    background: var(--bg-main);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+
+.container { width: min(var(--max-width), calc(100% - 48px)); margin: auto; }
+.section { padding: 110px 0; }
+
+.eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 800; letter-spacing: .06em;
+    color: var(--primary); text-transform: uppercase;
+}
+.eyebrow::before {
+    content: ""; width: 28px; height: 2px; background: var(--accent);
+}
+.section-head { max-width: 720px; margin-bottom: 50px; }
+.section-head h2 {
+    font-size: clamp(30px, 3.8vw, 50px);
+    line-height: 1.2; margin-top: 12px; letter-spacing: -1px;
+}
+.section-head p { color: var(--muted); margin-top: 16px; font-size: 17px; }
+
+.nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 16px 0; transition: all 0.3s ease;
+}
+.nav.scrolled {
+    background: rgba(2, 62, 43, 0.95);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    padding: 12px 0;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; color: #fff; }
+.brand-mark {
+    width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.25);
+    border-radius: var(--radius-sm); display: grid; place-items: center;
+    background: rgba(255,255,255,0.1); font-weight: 900; color: #fff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.brand-text { font-size: 13px; font-weight: 800; line-height: 1.3; }
+.brand-text span { display: block; color: rgba(255,255,255,0.65); font-weight: 500; font-size: 11px; }
+
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-size: 13px; color: rgba(255,255,255,0.8); transition: color 0.2s; font-weight: 600; }
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+    padding: 10px 18px; border-radius: 999px;
+    background: #fff !important; color: var(--primary-dark) !important; font-weight: 800 !important;
+    transition: transform 0.2s;
+}
+.nav-cta:hover { transform: translateY(-1px); }
+.menu-btn { display: none; color: #fff; font-size: 26px; }
+
+.hero {
+    min-height: 100vh; position: relative; display: flex; align-items: flex-end;
+    overflow: hidden; background: var(--primary-dark); color: #fff;
+}
+.hero-media, .hero-media::after { position: absolute; inset: 0; }
+.hero-media::after {
+    content: "";
+    background: 
+      linear-gradient(90deg, rgba(2,62,43,0.92) 0%, rgba(2,62,43,0.75) 50%, rgba(2,62,43,0.4) 100%),
+      linear-gradient(0deg, rgba(2,62,43,0.85) 0%, transparent 60%);
+}
+.hero-video, .hero-image { width: 100%; height: 100%; object-fit: cover; }
+.hero-image { display: none; }
+.hero-content { position: relative; z-index: 2; padding: 140px 0 70px; width: 100%; }
+.hero-copy { max-width: 780px; }
+.hero-kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px; background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px); font-size: 12px; font-weight: 700;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.hero h1 {
+    font-size: clamp(40px, 6.5vw, 80px); line-height: 1.08;
+    letter-spacing: -2px; margin: 22px 0;
+}
+.hero h1 span { color: #a3e2c9; }
+.hero-lead { max-width: 680px; color: rgba(255,255,255,0.82); font-size: 18px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 24px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 800;
+    transition: all 0.25s ease;
+}
+.btn-primary { background: #fff; color: var(--primary-dark); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: #fff; background: rgba(255,255,255,0.06); }
+.btn-ghost:hover { background: rgba(255,255,255,0.12); }
+
+.hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    max-width: 760px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.18);
+    padding-top: 24px;
+}
+.hero-stat strong { display: block; font-size: 30px; font-family: "Plus Jakarta Sans", sans-serif; line-height: 1.1; }
+.hero-stat span { font-size: 12px; color: rgba(255,255,255,0.65); }
+.video-note { position: absolute; bottom: 24px; left: 0; z-index: 3; color: rgba(255,255,255,0.5); font-size: 11px; }
+
+.trust { background: var(--bg-card); border-bottom: 1px solid var(--border); }
+.trust-inner { min-height: 105px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.trust-label { font-size: 12px; color: var(--muted); font-weight: 700; }
+.orgs { display: flex; align-items: center; gap: 30px; }
+.org { font-size: 16px; font-weight: 900; color: var(--primary-dark); }
+.org small { display: block; font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+.org-divider { width: 1px; height: 35px; background: var(--border); }
+
+.intro-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+.intro-number {
+    font-family: "Plus Jakarta Sans", sans-serif; font-size: clamp(90px, 13vw, 180px);
+    line-height: 0.8; letter-spacing: -6px; color: var(--primary); font-weight: 800;
+}
+.intro-number-label { font-size: 17px; font-weight: 800; margin-top: 24px; }
+.intro-text p { color: var(--muted); font-size: 17px; }
+.focus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+.focus-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+.focus-card b { display: block; font-size: 14px; margin-bottom: 4px; color: var(--primary-dark); }
+.focus-card span { font-size: 12px; color: var(--muted); }
+
+.metrics { background: var(--primary-dark); color: #fff; }
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.metric { padding: 32px 24px; border-left: 1px solid rgba(255,255,255,0.12); }
+.metric:last-child { border-left: 0; }
+.metric strong { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: 50px; letter-spacing: -1.5px; color: #a3e2c9; }
+.metric span { color: rgba(255,255,255,0.65); font-size: 12px; }
+
+.media-section { background: var(--bg-card); }
+.gallery { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr; grid-auto-rows: 220px; gap: 14px; }
+.gallery-item {
+    position: relative; overflow: hidden; border-radius: var(--radius-md); background: #e0e8e4; cursor: pointer;
+}
+.gallery-item:first-child { grid-row: span 2; }
+.gallery-item:nth-child(4) { grid-column: 2 / 4; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-overlay {
+    position: absolute; inset: auto 0 0; padding: 25px 20px 16px;
+    color: #fff; background: linear-gradient(transparent, rgba(2,31,27,0.8));
+    font-size: 13px; font-weight: 700;
+}
+.play-badge {
+    position: absolute; top: 16px; left: 16px; width: 44px; height: 44px; border-radius: 50%;
+    background: #fff; color: var(--primary-dark); display: grid; place-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); font-weight: bold;
+}
+
+.aid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.aid-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px;
+    position: relative; overflow: hidden; box-shadow: var(--shadow);
+}
+.aid-card::before {
+    content: ""; position: absolute; top: 0; right: 0; width: 140px; height: 140px;
+    background: var(--primary-light); border-radius: 0 0 0 100%; z-index: 0;
+}
+.aid-number {
+    position: relative; z-index: 1; width: 48px; height: 48px; border-radius: var(--radius-sm);
+    background: var(--primary-dark); color: #fff; display: grid; place-items: center;
+    font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700;
+}
+.aid-card h3 { position: relative; z-index: 1; font-size: 26px; margin: 24px 0 8px; color: var(--primary-dark); }
+.aid-card > p { position: relative; z-index: 1; color: var(--muted); font-size: 13px; }
+.item-list { position: relative; z-index: 1; list-style: none; margin-top: 24px; }
+.item-list li {
+    display: flex; justify-content: space-between; gap: 15px;
+    padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 13px;
+}
+.item-list li:last-child { border-bottom: 0; }
+.item-list span:last-child { font-weight: 800; white-space: nowrap; color: var(--primary); }
+
+.phases { background: #eef5f2; }
+.timeline { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.timeline::before {
+    content: ""; position: absolute; top: 35px; right: 10%; left: 10%; height: 2px; background: #c5dcd2;
+}
+.phase {
+    position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);
+    padding: 30px; z-index: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+.phase-dot {
+    width: 16px; height: 16px; border-radius: 50%; background: var(--primary);
+    border: 4px solid var(--primary-light); box-shadow: 0 0 0 6px #fff; margin-bottom: 20px;
+}
+.phase-number { font-size: 11px; color: var(--primary); font-weight: 900; letter-spacing: .05em; }
+.phase h3 { font-size: 22px; margin: 4px 0 8px; color: var(--primary-dark); }
+.phase-date { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: var(--accent); font-size: 13px; }
+.phase p { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.step {
+    min-height: 240px; background: var(--primary-dark); color: #fff; border-radius: var(--radius-md); padding: 30px;
+    display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow);
+}
+.step-num { font-family: "Plus Jakarta Sans", sans-serif; font-size: 12px; color: #a3e2c9; font-weight: 700; }
+.step h3 { font-size: 19px; line-height: 1.35; }
+.step p { font-size: 12px; color: rgba(255,255,255,0.65); }
+
+.accountability { background: var(--bg-card); }
+.account-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; }
+.account-panel {
+    background: var(--primary-dark); border-radius: var(--radius-lg); color: #fff; padding: 45px; box-shadow: var(--shadow);
+}
+.account-panel h3 { font-size: 28px; line-height: 1.3; margin-bottom: 12px; }
+.account-panel p { font-size: 13px; color: rgba(255,255,255,0.65); }
+.checks { margin-top: 25px; display: grid; gap: 12px; }
+.check {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.03);
+}
+.check-icon {
+    flex: 0 0 24px; height: 24px; border-radius: 50%; background: var(--primary-light); color: var(--primary-dark);
+    display: grid; place-items: center; font-size: 11px; font-weight: 900;
+}
+.check b { font-size: 13px; }
+.check span { display: block; color: rgba(255,255,255,0.6); font-size: 11px; }
+
+.account-copy p { color: var(--muted); font-size: 16px; }
+.account-points { display: grid; gap: 20px; margin-top: 28px; }
+.account-point { display: flex; gap: 16px; align-items: flex-start; }
+.account-point strong { font-size: 14px; color: var(--primary-dark); display: block; }
+.account-point span { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+.target { background: var(--bg-main); }
+.target-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.target-card {
+    background: var(--bg-card); border-radius: var(--radius-md); padding: 35px 30px; border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+.target-card .num { font-family: "Plus Jakarta Sans", sans-serif; font-size: 40px; color: var(--primary); font-weight: 800; }
+.target-card h3 { font-size: 18px; margin: 12px 0 8px; color: var(--primary-dark); }
+.target-card p { font-size: 12px; color: var(--muted); }
+
+.cta {
+    position: relative; background: var(--primary); color: #fff; overflow: hidden; padding: 90px 0;
+}
+.cta::before {
+    content: "1074"; position: absolute; left: -20px; bottom: -60px;
+    font-family: "Plus Jakarta Sans", sans-serif; font-size: 220px; font-weight: 800; color: rgba(255,255,255,0.04);
+}
+.cta-inner { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+.cta h2 { font-size: clamp(30px, 4vw, 52px); line-height: 1.15; }
+.cta p { margin-top: 14px; color: rgba(255,255,255,0.8); max-width: 620px; font-size: 14px; }
+.cta .btn { background: #fff; color: var(--primary-dark); margin-top: 25px; }
+
+footer { background: #021a14; color: #fff; padding: 60px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.footer-title { font-weight: 800; margin-bottom: 16px; font-size: 14px; color: #a3e2c9; }
+footer p, footer a { color: rgba(255,255,255,0.6); font-size: 12px; transition: color 0.2s; }
+footer a:hover { color: #fff; }
+.footer-links { display: grid; gap: 10px; }
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1); margin-top: 45px; padding-top: 25px;
+    display: flex; justify-content: space-between; gap: 20px; font-size: 11px; color: rgba(255,255,255,0.4);
+}
+
+.lightbox {
+    position: fixed; inset: 0; background: rgba(2, 26, 20, 0.95); z-index: 3000;
+    display: none; align-items: center; justify-content: center; padding: 30px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: min(1100px, 94vw); max-height: 84vh; object-fit: contain; border-radius: var(--radius-sm); }
+.lightbox-close {
+    position: absolute; top: 25px; left: 25px; border: 0; background: rgba(255,255,255,0.12);
+    color: #fff; width: 45px; height: 45px; border-radius: 50%; font-size: 24px; cursor: pointer;
+}
+.lightbox-caption { position: absolute; bottom: 25px; color: #fff; font-size: 13px; font-weight: 600; }
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+    <div class="container nav-inner">
+        <a class="brand" href="#top">
+            <div class="brand-mark">IV</div>
+            <div class="brand-text">
+                İHSAN VEFA DERNEĞİ
+                <span>Orphan Emergency Project</span>
+            </div>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#overview">المشروع</a>
+            <a href="#impact">الأثر</a>
+            <a href="#media">من الميدان</a>
+            <a href="#aid">المساعدة</a>
+            <a href="#phases">المراحل</a>
+            <a href="#accountability">المساءلة</a>
+            <a href="#contact" class="nav-cta">ملخص المشروع</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+    <div class="hero-media">
+        <img class="hero-image" id="heroImage" src="media/1.jpeg" alt="مشهد من مشروع توزيع المساعدات الغذائية" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <div class="container hero-content">
+        <div class="hero-copy reveal">
+            <div class="hero-kicker">
+                <span class="dot"></span>
+                استجابة غذائية طارئة للأسر اليتيمة والهشة
+            </div>
+
+            <h1>
+                دعم غذائي<br>
+                يحمي <span>الكرامة</span><br>
+                ويعزز الصمود.
+            </h1>
+
+            <p class="hero-lead">
+                مشروع استجابة طارئة يستهدف 1,074 أسرة من الأسر اليتيمة والهشة في قطاع غزة، عبر ثلاث مراحل من المساعدات الغذائية المتكاملة.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#impact" class="btn btn-primary">اكتشف أثر المشروع ↓</a>
+                <a href="#media" class="btn btn-ghost">شاهد من الميدان</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>1,074</strong>
+                    <span>أسرة مستفيدة</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>3 × 358</strong>
+                    <span>مراحل تنفيذية</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>2</strong>
+                    <span>نوعان من المساعدات الغذائية</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+    <div class="container trust-inner">
+        <div class="trust-label">تنفيذ وتمويل المشروع</div>
+        <div class="orgs">
+            <div class="org">
+                İHSAN VEFA DERNEĞİ
+                <small>Implementing Partner</small>
+            </div>
+            <div class="org-divider"></div>
+            <div class="org">
+                maa — Australia
+                <small>Funding Partner</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section" id="overview">
+    <div class="container">
+        <div class="intro-grid">
+            <div class="reveal">
+                <div class="eyebrow">عن المشروع</div>
+                <div class="intro-number">1,074</div>
+                <div class="intro-number-label">أسرة يتيمة وهشة ضمن الاستجابة الغذائية</div>
+            </div>
+
+            <div class="intro-text reveal">
+                <div class="section-head" style="margin-bottom:20px">
+                    <h2>استجابة مصممة حول الاحتياج الفعلي.</h2>
+                </div>
+                <p>
+                    يجمع المشروع بين الطرود الغذائية الجافة والسلال الغذائية الطازجة، مع تنفيذ المساعدة على ثلاث مراحل لضمان تنظيم التوزيع والوصول إلى الأسر المستهدفة.
+                </p>
+
+                <div class="focus-grid">
+                    <div class="focus-card">
+                        <b>الطرد الغذائي الجاف</b>
+                        <span>12 صنفًا غذائيًا أساسيًا</span>
+                    </div>
+                    <div class="focus-card">
+                        <b>السلة الغذائية الطازجة</b>
+                        <span>10 كغم من الخضروات والفواكه</span>
+                    </div>
+                    <div class="focus-card">
+                        <b>التنفيذ المرحلي</b>
+                        <span>3 مراحل × 358 أسرة</span>
+                    </div>
+                    <div class="focus-card">
+                        <b>المساءلة</b>
+                        <span>FCM + PDM + تقارير</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section metrics" id="impact">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow" style="color:#a3e2c9">الأثر بالأرقام</div>
+            <h2>كل رقم يمثل أسرة، واحتياجًا، واستجابة.</h2>
+            <p style="color:rgba(255,255,255,0.65)">
+                تم تصميم التدخل ليجمع بين حجم الوصول، انتظام التوزيع، وتنوع المساعدة الغذائية.
+            </p>
+        </div>
+
+        <div class="metrics-grid reveal">
+            <div class="metric">
+                <strong>1,074</strong>
+                <span>أسرة مستفيدة</span>
+            </div>
+            <div class="metric">
+                <strong>2,148</strong>
+                <span>وحدة مساعدة غذائية: جافة + طازجة</span>
+            </div>
+            <div class="metric">
+                <strong>358</strong>
+                <span>أسرة في كل مرحلة</span>
+            </div>
+            <div class="metric">
+                <strong>10 KG</strong>
+                <span>وزن السلة الغذائية الطازجة</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MEDIA -->
+<section class="section media-section" id="media">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">من أرض الميدان</div>
+            <h2>المشروع كما يحدث على الأرض.</h2>
+            <p>توثيق مصور لأبرز محطات الاستجابة والتوزيع الميداني.</p>
+        </div>
+
+        <div class="gallery reveal" id="gallery">
+            <article class="gallery-item" onclick="openLightbox('media/7.jpeg', 'من الميدان — المرحلة الأولى')">
+                <img src="media/7.jpeg" alt="من الميدان — المرحلة الأولى" loading="lazy">
+                <div class="gallery-overlay">من الميدان — المرحلة الأولى</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/5.jpeg', 'تجهيز المساعدات الغذائية')">
+                <img src="media/5.jpeg" alt="تجهيز المساعدات الغذائية" loading="lazy">
+                <div class="gallery-overlay">تجهيز المساعدات الغذائية</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/2.jpeg', 'توزيع الطرود الغذائية')">
+                <img src="media/2.jpeg" alt="توزيع الطرود الغذائية" loading="lazy">
+                <div class="gallery-overlay">توزيع الطرود الغذائية</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/3.jpeg', 'الوصول إلى الأسر المستفيدة')">
+                <img src="media/3.jpeg" alt="الوصول إلى الأسر المستفيدة" loading="lazy">
+                <div class="gallery-overlay">الوصول إلى الأسر المستفيدة</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+            <article class="gallery-item" onclick="openLightbox('media/6.jpeg', 'السلال الغذائية الطازجة')">
+                <img src="media/6.jpeg" alt="السلال الغذائية الطازجة" loading="lazy">
+                <div class="gallery-overlay">السلال الغذائية الطازجة</div>
+                <div class="play-badge" aria-hidden="true">↗</div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- AID -->
+<section class="section" id="aid">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">مكونات المساعدة</div>
+            <h2>مساعدة غذائية متكاملة، لا مجرد طرد.</h2>
+            <p>يتكون التدخل من طرد غذائي جاف وسلة غذائية طازجة، وفق تفاصيل المشروع.</p>
+        </div>
+
+        <div class="aid-grid">
+            <article class="aid-card reveal">
+                <div class="aid-number">01</div>
+                <h3>الطرد الغذائي الجاف</h3>
+                <p>12 صنفًا غذائيًا أساسيًا ضمن كل طرد.</p>
+
+                <ul class="item-list">
+                    <li><span>أرز بسمتي 1121</span><span>1 Kg</span></li>
+                    <li><span>زيت طبخ</span><span>1 L</span></li>
+                    <li><span>سكر</span><span>2 Kg</span></li>
+                    <li><span>جبنة فيتا</span><span>2 × 250g</span></li>
+                    <li><span>معجون طماطم</span><span>480g</span></li>
+                    <li><span>فول مدمس</span><span>2 × 400g</span></li>
+                    <li><span>طحينة</span><span>2 × 400g</span></li>
+                    <li><span>تونة معلبة</span><span>2 × 140g</span></li>
+                    <li><span>زعتر</span><span>500g</span></li>
+                    <li><span>معكرونة</span><span>2 × 400g</span></li>
+                    <li><span>زيت زيتون</span><span>1 L</span></li>
+                    <li><span>كريمة شوكولاتة</span><span>350g</span></li>
+                </ul>
+            </article>
+
+            <article class="aid-card reveal">
+                <div class="aid-number">02</div>
+                <h3>السلة الغذائية الطازجة</h3>
+                <p>سلة بوزن إجمالي 10 كغم من الخضروات والفواكه.</p>
+
+                <ul class="item-list">
+                    <li><span>خيار</span><span>2 Kg</span></li>
+                    <li><span>طماطم</span><span>2 Kg</span></li>
+                    <li><span>بصل</span><span>2 Kg</span></li>
+                    <li><span>بطاطا</span><span>2 Kg</span></li>
+                    <li><span>مانجا</span><span>1 Kg</span></li>
+                    <li><span>تفاح</span><span>1 Kg</span></li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- PHASES -->
+<section class="section phases" id="phases">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">مراحل التنفيذ</div>
+            <h2>ثلاث مراحل. وصول منظم. 1,074 أسرة.</h2>
+            <p>تم تقسيم المستفيدين إلى ثلاث دفعات متساوية، بواقع 358 أسرة في كل مرحلة.</p>
+        </div>
+
+        <div class="timeline">
+            <article class="phase reveal">
+                <div class="phase-dot"></div>
+                <div class="phase-number">PHASE 01</div>
+                <h3>المرحلة الأولى</h3>
+                <div class="phase-date">30 AUG 2026</div>
+                <p>الوصول إلى الدفعة الأولى من الأسر المستهدفة وتنفيذ التوزيع وفق آليات التحقق والمتابعة.</p>
+                <strong style="display:block;margin-top:18px;color:var(--primary-dark)">358 أسرة</strong>
+            </article>
+
+            <article class="phase reveal">
+                <div class="phase-dot"></div>
+                <div class="phase-number">PHASE 02</div>
+                <h3>المرحلة الثانية</h3>
+                <div class="phase-date">15 SEP 2026</div>
+                <p>استكمال الاستجابة للدفعة الثانية مع استمرار إجراءات الجودة والمساءلة.</p>
+                <strong style="display:block;margin-top:18px;color:var(--primary-dark)">358 أسرة</strong>
+            </article>
+
+            <article class="phase reveal">
+                <div class="phase-dot"></div>
+                <div class="phase-number">PHASE 03</div>
+                <h3>المرحلة الثالثة</h3>
+                <div class="phase-date">15 OCT 2026</div>
+                <p>استكمال الوصول إلى الأسر المستهدفة وإغلاق دورة التوزيع والمتابعة والتوثيق.</p>
+                <strong style="display:block;margin-top:18px;color:var(--primary-dark)">358 أسرة</strong>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- IMPLEMENTATION -->
+<section class="section" id="implementation">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">منهجية التنفيذ</div>
+            <h2>من التحقق إلى التوزيع ثم التعلّم.</h2>
+        </div>
+
+        <div class="steps">
+            <article class="step reveal">
+                <div class="step-num">01 / VERIFY</div>
+                <h3>التحقق من المستفيدين</h3>
+                <p>تحديد الأسر المستهدفة والتحقق من أهليتها وبياناتها قبل التوزيع.</p>
+            </article>
+
+            <article class="step reveal">
+                <div class="step-num">02 / QUALITY</div>
+                <h3>الشراء وضبط الجودة</h3>
+                <p>تجهيز المساعدات ومتابعة الجودة قبل إيصالها إلى الأسر.</p>
+            </article>
+
+            <article class="step reveal">
+                <div class="step-num">03 / DISTRIBUTE</div>
+                <h3>التوزيع المرحلي</h3>
+                <p>تنفيذ ثلاث مراحل للوصول إلى 358 أسرة في كل مرحلة.</p>
+            </article>
+
+            <article class="step reveal">
+                <div class="step-num">04 / LEARN</div>
+                <h3>المتابعة والتقييم</h3>
+                <p>تفعيل آلية الشكاوى والتغذية الراجعة وتنفيذ PDM وإعداد التقارير.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- TARGET GROUPS -->
+<section class="section target">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">الفئات المستهدفة</div>
+            <h2>الأولوية للأسر الأكثر هشاشة.</h2>
+            <p>يستهدف المشروع فئات محددة من الأسر اليتيمة والهشة وفق معايير المشروع.</p>
+        </div>
+
+        <div class="target-grid">
+            <article class="target-card reveal">
+                <div class="num">01</div>
+                <h3>الأسر التي تعيلها النساء</h3>
+                <p>الأسر التي ترأسها نساء/أرامل ولا يوجد فيها معيل أساسي، مع وجود أطفال أيتام.</p>
+            </article>
+
+            <article class="target-card reveal">
+                <div class="num">02</div>
+                <h3>الأيتام فاقدو الوالدين</h3>
+                <p>الأطفال الذين فقدوا كلا الوالدين ويعيشون مع أقارب أو أوصياء أو بشكل مستقل.</p>
+            </article>
+
+            <article class="target-card reveal">
+                <div class="num">03</div>
+                <h3>الأسر الاقتصادية والاجتماعية الهشة</h3>
+                <p>الأسر ذات الدخل المعدوم أو غير المستقر، والاعتمادية المرتفعة، والصعوبات المرتبطة بالنزوح.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ACCOUNTABILITY -->
+<section class="section accountability" id="accountability">
+    <div class="container">
+        <div class="account-grid">
+            <div class="account-panel reveal">
+                <div class="eyebrow" style="color:#a3e2c9">المساءلة والجودة</div>
+                <h3>المساعدة لا تنتهي عند لحظة التوزيع.</h3>
+                <p>يتضمن المشروع آليات للمتابعة والتغذية الراجعة والتقييم بعد التوزيع والتوثيق والتقارير.</p>
+
+                <div class="checks">
+                    <div class="check">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <b>SPHERE-aligned delivery</b>
+                            <span>تسليم يراعي مبادئ ومعايير الاستجابة الإنسانية ذات الصلة.</span>
+                        </div>
+                    </div>
+                    <div class="check">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <b>FCM</b>
+                            <span>Feedback & Complaint Mechanism للتغذية الراجعة والشكاوى.</span>
+                        </div>
+                    </div>
+                    <div class="check">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <b>PDM</b>
+                            <span>Post-Distribution Monitoring لمتابعة النتائج بعد التوزيع.</span>
+                        </div>
+                    </div>
+                    <div class="check">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <b>Reporting</b>
+                            <span>تقارير سردية ومالية لدعم الشفافية والتوثيق.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account-copy reveal">
+                <div class="eyebrow">شفافية ومتابعة</div>
+                <h2 style="font-size:clamp(30px,3.8vw,48px);line-height:1.2;margin:14px 0">
+                    قياس التنفيذ، والاستماع للمستفيدين، والتعلّم.
+                </h2>
+                <p>تم بناء دورة التنفيذ لتتجاوز عملية التوزيع نفسها، عبر جمع الملاحظات ومراقبة ما بعد التوزيع وإعداد التقارير اللازمة.</p>
+
+                <div class="account-points">
+                    <div class="account-point">
+                        <div class="aid-number" style="width:36px;height:36px;flex:none">01</div>
+                        <div>
+                            <strong>Feedback & Complaints</strong>
+                            <span>قناة للتغذية الراجعة والشكاوى والملاحظات.</span>
+                        </div>
+                    </div>
+                    <div class="account-point">
+                        <div class="aid-number" style="width:36px;height:36px;flex:none">02</div>
+                        <div>
+                            <strong>Post-Distribution Monitoring</strong>
+                            <span>متابعة ما بعد التوزيع لفهم تجربة الأسر ونتائج التدخل.</span>
+                        </div>
+                    </div>
+                    <div class="account-point">
+                        <div class="aid-number" style="width:36px;height:36px;flex:none">03</div>
+                        <div>
+                            <strong>Narrative & Financial Reporting</strong>
+                            <span>توثيق التقدم والنتائج والجوانب المالية للمشروع.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta" id="contact">
+    <div class="container cta-inner">
+        <div class="reveal">
+            <h2>1,074 أسرة.<br>استجابة واحدة تحفظ الكرامة.</h2>
+            <p>مشروع الاستجابة الطارئة للأيتام — طرود غذائية وسلال غذائية طازجة في قطاع غزة، بتنفيذ İHSAN VEFA DERNEĞİ وتمويل maa — Australia.</p>
+        </div>
+        <div class="reveal">
+            <a href="#top" class="btn">العودة إلى بداية المشروع ↑</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand" style="margin-bottom:15px">
+                    <div class="brand-mark">IV</div>
+                    <div class="brand-text">
+                        İHSAN VEFA DERNEĞİ
+                        <span>Orphan Emergency Project</span>
+                    </div>
+                </div>
+                <p>مشروع استجابة غذائية طارئة يستهدف الأسر اليتيمة والهشة في قطاع غزة.</p>
+            </div>
+            <div>
+                <div class="footer-title">روابط المشروع</div>
+                <div class="footer-links">
+                    <a href="#overview">عن المشروع</a>
+                    <a href="#media">من أرض الميدان</a>
+                    <a href="#aid">مكونات المساعدة</a>
+                    <a href="#phases">مراحل التنفيذ</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-title">المساءلة</div>
+                <div class="footer-links">
+                    <a href="#implementation">منهجية التنفيذ</a>
+                    <a href="#accountability">المتابعة والتقييم</a>
+                    <a href="#accountability">FCM / PDM</a>
+                    <a href="#accountability">التقارير</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>Orphan Emergency Project — Food Parcels & Fresh Food Parcels</span>
+            <span>1,074 Families · 3 Phases · Gaza Strip</span>
+        </div>
+    </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="إغلاق">×</button>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+function openLightbox(src, title) {
+    lightboxImage.src = src;
+    lightboxImage.alt = title;
+    lightboxCaption.textContent = title;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+}
+
+document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+const nav = document.getElementById("nav");
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 30);
+});
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {threshold:.08});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
